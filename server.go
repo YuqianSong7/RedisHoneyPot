@@ -23,9 +23,37 @@ type RedisServer struct {
 	log     *logrus.Logger
 }
 
+// Initialize the hashmap with predefined keys and values
+func initHashMap(s *RedisServer) {
+    // Add key-value pairs to the hashmap
+    users := []string{
+        "Idella.Harber", "Dion.Jakubowski90", "Paxton54", "Heaven_Nicolas", "Jennie.Larson52", "Esteban6", "Isabell.Friesen11", "Randy.Leannon", "Iva16",
+        "Glennie76", "Vicenta_Nicolas", "Gloria56", "Bridget18", "Salma_Feeney64", "Raphael_Nicolas", "Jules.Hoppe93", "Zita_Schultz10", "Josianne.Hessel",
+        "Antone.Goldner", "Hanna.Casper", "Concepcion.OConnell", "Craig72", "Karli83", "Ericka76", "Darryl.Kertzmann", "Ward.Goyette", "Meghan.Schmitt81",
+        "Tyra32", "Lorna_Braun38", "Martina_Schmeler14", "Aracely12", "Zachery33", "Webster.Cassin60", "Summer90", "Erick.Marquardt", "Theo64", "Marianne42",
+        "Lizzie1", "Anna22", "Adriel52", "Tyshawn.Davis4", "Orlo_Howell", "Bria89", "Ramona.Sporer41", "Rickie_Ullrich33", "Brisa_Smith49", "Pablo71", "Philip44",
+        "Willie_Prohaska53"/* Add more usernames here */
+    }
+    passwords := []string{
+        "opgfhG_5g4sz3gc", "Co9x9sSIijtJjmB", "006T4vDTUekHxYS", "iRCHkkZHVwXGbEU", "LK0XlycyYyrLloJ", "AZDO8_MeA6PLJvI", "3AUPZ5loOvtNljb", "O2Ijd_xhtjqfDOW",
+        "EXHicm3u_4lQXKy", "SMXZc6IMKO3yaVo", "LkXfcivy3iCHFfd", "len4uPYCfFE1u6a", "eUCoonnSIudrlTd", "rARYF9iykLgJmOd", "XyQN30nKTUllI4e", "TJffrCr3VkJGlq7",
+        "BE6MI9OwK4x1pe3", "ms57yAiBN_Y9spu", "yWpblqpxD0srZAo", "HehtuFrSmEDGWgP", "ZUZGCA45zTXQzAC", "Wj3cqmiCOaFbAjy", "frOzY19QRDFvcCC", "GDaKRvr575Ftefx",
+        "oS5BAeitR3HclDC", "r1fvpAtRD4MFl8v", "FjOZtOIhIOFD2_Y", "WBGl4GhZK463a3U", "1zkhQDFrD609IFC", "rs0HUxx_nw4Vtwx", "ec1_9VIEPlRvSuz", "XvmgzHlRm0jfGVm",
+        "LPhC66BQoF0AKtp", "p8e0ktcGQHZl_36", "JeN5CYg4skGOl1n", "cGvJ1IrCdv7UqK0", "0eq5QX4oYvorr3b", "nd18gHBBxVvZ_k6", "hi7Bvps5KngZ1ET", "dxmjwcWhekag_9S",
+        "e81PY_ViRfHClXF", "WB3EEDvrUJJAGdR", "kyjZE4or4iI28Tv", "nbLxxEC4mFW5ptT", "ai8tKyAwRU7JxDx", "7VeBxy4NeMTmZ9L", "dkcmRXOK3eS4AN0", "WrjoC5QEZjRgmfk",
+        "UATyplpqUnlalEG"/* Add more passwords here */
+    }
+    // Insert usernames and passwords into hashmap
+    for i := 0; i < len(users); i++ {
+        s.hashmap.Put(users[i], passwords[i])
+    }
+}
+
 func NewRedisServer(address string, proto string, loopsnum int) (server *RedisServer, err error) {
 	Serv := new(RedisServer)
 	Serv.hashmap = hashmap.New()
+	// Initialize the hashmap with predefined keys and values !!!!!!!!!!
+    initHashMap(Serv)
 	config, err := LoadConfig("redis.conf")
 	Serv.log = logrus.New()
 	Serv.log.SetFormatter(&logrus.JSONFormatter{
