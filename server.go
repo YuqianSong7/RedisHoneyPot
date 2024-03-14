@@ -32,8 +32,7 @@ func initHashMap(s *RedisServer) {
         "Antone.Goldner", "Hanna.Casper", "Concepcion.OConnell", "Craig72", "Karli83", "Ericka76", "Darryl.Kertzmann", "Ward.Goyette", "Meghan.Schmitt81",
         "Tyra32", "Lorna_Braun38", "Martina_Schmeler14", "Aracely12", "Zachery33", "Webster.Cassin60", "Summer90", "Erick.Marquardt", "Theo64", "Marianne42",
         "Lizzie1", "Anna22", "Adriel52", "Tyshawn.Davis4", "Orlo_Howell", "Bria89", "Ramona.Sporer41", "Rickie_Ullrich33", "Brisa_Smith49", "Pablo71", "Philip44",
-        "Willie_Prohaska53"/* Add more usernames here */
-    }
+        "Willie_Prohaska53"}
     passwords := []string{
         "opgfhG_5g4sz3gc", "Co9x9sSIijtJjmB", "006T4vDTUekHxYS", "iRCHkkZHVwXGbEU", "LK0XlycyYyrLloJ", "AZDO8_MeA6PLJvI", "3AUPZ5loOvtNljb", "O2Ijd_xhtjqfDOW",
         "EXHicm3u_4lQXKy", "SMXZc6IMKO3yaVo", "LkXfcivy3iCHFfd", "len4uPYCfFE1u6a", "eUCoonnSIudrlTd", "rARYF9iykLgJmOd", "XyQN30nKTUllI4e", "TJffrCr3VkJGlq7",
@@ -41,8 +40,7 @@ func initHashMap(s *RedisServer) {
         "oS5BAeitR3HclDC", "r1fvpAtRD4MFl8v", "FjOZtOIhIOFD2_Y", "WBGl4GhZK463a3U", "1zkhQDFrD609IFC", "rs0HUxx_nw4Vtwx", "ec1_9VIEPlRvSuz", "XvmgzHlRm0jfGVm",
         "LPhC66BQoF0AKtp", "p8e0ktcGQHZl_36", "JeN5CYg4skGOl1n", "cGvJ1IrCdv7UqK0", "0eq5QX4oYvorr3b", "nd18gHBBxVvZ_k6", "hi7Bvps5KngZ1ET", "dxmjwcWhekag_9S",
         "e81PY_ViRfHClXF", "WB3EEDvrUJJAGdR", "kyjZE4or4iI28Tv", "nbLxxEC4mFW5ptT", "ai8tKyAwRU7JxDx", "7VeBxy4NeMTmZ9L", "dkcmRXOK3eS4AN0", "WrjoC5QEZjRgmfk",
-        "UATyplpqUnlalEG"/* Add more passwords here */
-    }
+        "UATyplpqUnlalEG"}
     // Insert usernames and passwords into hashmap
     for i := 0; i < len(users); i++ {
         s.hashmap.Put(users[i], passwords[i])
